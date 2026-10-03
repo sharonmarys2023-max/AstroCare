@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astronaut Health Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">✦</div>
+      <div>
+        <div class="brand-title">ASTRO<span>CARE</span></div>
+        <div class="brand-subtitle">CREW HEALTH MONITORING SYSTEM</div>
+      </div>
+    </div>
+    <div class="mission-clock">
+      <span class="live-dot"></span>
+      <div>
+        <small>LIVE MISSION TIME</small>
+        <strong id="missionTime">DAY 047 · 00:00:00</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">LUNAR TRANSIT · CREW 01</p>
+        <h1>Astronaut Health Monitor</h1>
+        <p class="hero-copy">Real-time simulated biometric monitoring for mission operations.</p>
+      </div>
+      <div class="astronaut-card">
+        <div class="avatar">👨‍🚀</div>
+        <div>
+          <span class="label">ASTRONAUT</span>
+          <h2>Sharon S</h2>
+          <span class="status-pill" id="overallStatus"><i></i> NORMAL</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="alert-panel hidden" id="alertPanel">
+      <div class="alert-icon">!</div>
+      <div>
+        <strong id="alertTitle">HEALTH ALERT</strong>
+        <p id="alertText">Monitoring detected an abnormal reading.</p>
+      </div>
+      <button id="dismissAlert" aria-label="Dismiss alert">×</button>
+    </section>
+
+    <section class="metrics-grid">
+      <article class="metric-card heart">
+        <div class="metric-top"><span class="metric-icon">♥</span><span>HEART RATE</span></div>
+        <div class="metric-value"><strong id="heartRate">74</strong><span>BPM</span></div>
+        <div class="mini-track"><div id="heartBar" class="mini-fill"></div></div>
+        <small>Resting range: 60–100 BPM</small>
+      </article>
+
+      <article class="metric-card oxygen">
+        <div class="metric-top"><span class="metric-icon">◉</span><span>OXYGEN LEVEL</span></div>
+        <div class="metric-value"><strong id="oxygen">97</strong><span>%</span></div>
+        <div class="mini-track"><div id="oxygenBar" class="mini-fill"></div></div>
+        <small>Critical threshold: &lt; 90%</small>
+      </article>
+
+      <article class="metric-card temp">
+        <div class="metric-top"><span class="metric-icon">♨</span><span>BODY TEMPERATURE</span></div>
+        <div class="metric-value"><strong id="temperature">36.7</strong><span>°C</span></div>
+        <div class="mini-track"><div id="tempBar" class="mini-fill"></div></div>
+        <small>Reference range: 36.1–37.2 °C</small>
+      </article>
+
+      <article class="metric-card sleep">
+        <div class="metric-top"><span class="metric-icon">◒</span><span>SLEEP DURATION</span></div>
+        <div class="metric-value"><strong id="sleep">7.4</strong><span>HRS</span></div>
+        <div class="mini-track"><div id="sleepBar" class="mini-fill"></div></div>
+        <small>Target: 7–9 hours</small>
+      </article>
+
+      <article class="metric-card exercise">
+        <div class="metric-top"><span class="metric-icon">⚡</span><span>EXERCISE TIME</span></div>
+        <div class="metric-value"><strong id="exercise">42</strong><span>MIN</span></div>
+        <div class="mini-track"><div id="exerciseBar" class="mini-fill"></div></div>
+        <small>Daily target: 30–60 min</small>
+      </article>
+    </section>
+
+    <section class="lower-grid">
+      <article class="chart-card">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">LIVE TELEMETRY</p>
+            <h2>Oxygen & Heart Rate</h2>
+          </div>
+          <span class="update-label">Updates every 2 seconds</span>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="healthChart" width="900" height="300"></canvas>
+        </div>
+      </article>
+
+      <article class="status-card">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">MISSION STATUS</p>
+            <h2>System Overview</h2>
+          </div>
+        </div>
+        <div class="system-row"><span><i class="ok-dot"></i> Life support</span><strong>ONLINE</strong></div>
+        <div class="system-row"><span><i class="ok-dot"></i> Medical telemetry</span><strong>ONLINE</strong></div>
+        <div class="system-row"><span><i class="ok-dot"></i> Exercise module</span><strong>ONLINE</strong></div>
+        <div class="system-row"><span><i class="ok-dot"></i> Communications</span><strong>ONLINE</strong></div>
+        <div class="mission-progress">
+          <div class="progress-head"><span>MISSION PROGRESS</span><strong>47%</strong></div>
+          <div class="progress-track"><div></div></div>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <span>ASTROCARE · SIMULATED MISSION DATA</span>
+      <span id="lastUpdate">Last update: --:--:--</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
