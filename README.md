@@ -26,8 +26,3 @@ Additional monitoring:
 - Heart rate > 100 BPM → WARNING
 - Temperature outside critical range → CRITICAL
 - Sleep below 6 hours → WARNING
-
-## Run locally
-Open `index.html` in a browser.
-
-No backend, database, API key, or installation is required.
